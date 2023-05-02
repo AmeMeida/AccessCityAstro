@@ -9,7 +9,7 @@ const current: string = Astro.url.pathname;
   style="background-color: rgb(102, 155, 188);"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"
+    <a class="navbar-brand" href=`${import.meta.env.BASE_URL}/`
       ><img src="favicon.png" height="40px" width="40px" /></a
     >
     <button
@@ -25,10 +25,10 @@ const current: string = Astro.url.pathname;
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <NavItem href="/"><span lang="en-us">Home</span></NavItem>
-        <NavItem href="/sobrenos">Sobre nós</NavItem>
-        <NavItem href="/contato">Contato</NavItem>
-        <NavItem href="/documentos" enabled={false}>Documentos</NavItem>
+        <NavItem href=`${import.meta.env.BASE_URL}/`><span lang="en-us">Home</span></NavItem>
+        <NavItem href=`${import.meta.env.BASE_URL}/sobrenos`>Sobre nós</NavItem>
+        <NavItem href=`${import.meta.env.BASE_URL}/contato`>Contato</NavItem>
+        <NavItem href=`${import.meta.env.BASE_URL}/documentos` enabled={false}>Documentos</NavItem>
       </ul>
       <form class="d-flex" role="search">
         <a class="btn btn-light" role="button" type="submit" href="tela.html"
