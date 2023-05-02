@@ -1,0 +1,96 @@
+---
+export interface Props {
+  nome: string;
+  cargo: string;
+  img: string;
+}
+
+const { nome, cargo, img } = Astro.props;
+---
+
+<div class="card cardEquipe">
+  <div class="imagem">
+    <img src={img} alt=`Foto de ${nome}` />
+  </div>
+  <div class="pessoaInfo">
+    <div class="maisInfo">
+      <h2>{nome}<span>{cargo}</span></h2>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cardEquipe {
+    width: 300px !important;
+    height: 400px !important;
+    background: linear-gradient(#e6dfd2, #e6dfd2 30%, #2a3050 30%, #0e1124);
+    border-radius: 20px !important;
+    overflow: hidden;
+    display: grid !important;
+  }
+
+  .imagem {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    z-index: 100000;
+    border-radius: 20px;
+    overflow: hidden;
+    transform-origin: top;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .cardEquipe:hover .imagem {
+    transform: translateY(30px) scale(0.6);
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pessoaInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 45px;
+    transform: translateY(100%);
+    transition: 0.5s;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .cardEquipe:hover .pessoaInfo {
+    transform: translateY(0);
+  }
+
+  .maisInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  h2 {
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    font-size: 1.2rem !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+  }
+
+  span {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #fff;
+  }
+</style>

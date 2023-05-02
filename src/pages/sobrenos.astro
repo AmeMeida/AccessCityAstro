@@ -1,0 +1,72 @@
+---
+import Equipe from "../components/Equipe.astro";
+import Page from "../layouts/Page.astro";
+---
+
+<Page title="Sobre nós">
+  <h1 class="display-1 text-center">Sobre nós</h1>
+
+  <section>
+    <img src="img/freepik.png">
+    <article>
+      <h2>O que é AccessCity?</h2>
+      <p><i lang="en-us">AccessCity</i> é um aplicativo <span lang="en-us">mobile</span> que tem como objetivo tornar as cidades brasileiras mais acessíveis. A aplicação auxilia no uso de transporte público, utiliza filtros para avaliação de estabelecimentos baseados em sua acessibilidade (restaurantes, parques, escolas, etc) e possui scanner e atalhos para armazenar uma cópia do passe livre e outros documentos importantes como laudos</p>
+    </article>
+  </section>
+
+  <section>
+    <article>
+      <h2>Como ele funciona?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </article>
+    <img src="img/freepik2.png">
+  </section>
+
+  <Equipe />
+</Page>
+
+<style>
+  :global(main) {
+    background-color: hsl(39, 29%, 86%);
+  }
+
+  h1 {
+    padding-top: 2rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: inherit;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem 5rem;
+    column-gap: 5rem;
+  }
+
+  section:last-of-type {
+    margin-bottom: 4rem;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: clamp(40ch, 60%, 100ch);
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  img {
+    width: clamp(100px, 70%, 450px);
+  }
+</style>

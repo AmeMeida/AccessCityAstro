@@ -1,0 +1,40 @@
+---
+import NavItem from "./NavItem.astro";
+
+const current: string = Astro.url.pathname;
+---
+
+<nav
+  class="navbar navbar-expand-lg navbar-dark"
+  style="background-color: rgb(102, 155, 188);"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"
+      ><img src="favicon.png" height="40px" width="40px" /></a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <NavItem href="/"><span lang="en-us">Home</span></NavItem>
+        <NavItem href="/sobrenos">Sobre nós</NavItem>
+        <NavItem href="/contato">Contato</NavItem>
+        <NavItem href="/documentos" enabled={false}>Documentos</NavItem>
+      </ul>
+      <form class="d-flex" role="search">
+        <a class="btn btn-light" role="button" type="submit" href="tela.html"
+          >Log In</a
+        >
+      </form>
+    </div>
+  </div>
+</nav>

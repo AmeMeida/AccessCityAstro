@@ -1,0 +1,21 @@
+---
+import NavBar from "../components/nav/NavBar.astro";
+import Base from "./Base.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, hasFooter = true, hasNav = true } = Astro.props;
+---
+
+<Base title={title}>
+  {hasNav && <NavBar />}
+  <main>
+    <slot />
+  </main>
+  {hasFooter && <Footer />}
+</Base>
+
+<style>
+  main {
+    flex: 1;
+  }
+</style>

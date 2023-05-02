@@ -1,0 +1,12 @@
+---
+const { enabled = true, href } = Astro.props;
+
+const isCurrent = href == Astro.url.pathname;
+---
+
+<li class="nav-item">
+  <a
+    class:list={["nav-link", { disabled: (isCurrent || !enabled), active: isCurrent }]}
+    aria-current={isCurrent ? "page" : undefined}
+    href={href}><slot /></a>
+</li>

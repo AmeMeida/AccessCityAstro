@@ -1,0 +1,68 @@
+---
+export interface Props {
+	title: string;
+}
+
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js?url';
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+
+  <script
+    src={bootstrap}
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous" defer async
+  />
+</html>
+
+<style is:global lang="scss">
+  @import "../styles/bootstrap.scss";
+  @import "../styles/style.css";
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img, btn {
+    user-select: none;
+  }
+
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+
+  html, body {
+    min-height: 100vh;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+</style>

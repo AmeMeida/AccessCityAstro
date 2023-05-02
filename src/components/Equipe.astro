@@ -1,0 +1,56 @@
+---
+import CardEquipe from './CardEquipe.astro';
+---
+
+<section>
+  <h3 class="display-3">Nossa Equipe</h3>
+  <div>
+    <CardEquipe
+      nome="Luanna Sachinelli Paggiaro"
+      img="/img/equipe/yo.jfif"
+      cargo="Gerente do projeto"
+    />
+    <CardEquipe
+      nome="Natália Carvalho"
+      img="/img/equipe/nat.png"
+      cargo="Programadora e PCD"
+    />
+    <CardEquipe
+      nome="Heitor Gomes de Oliveira"
+      img="/img/equipe/heitor.png"
+      cargo="Programador"
+    />
+    <CardEquipe
+      nome="Catarina Fagotti Bonifácio"
+      img="/img/equipe/cat.png"
+      cargo="Programadora"
+    />
+  </div>
+</section>
+
+<style>
+  section {
+    min-height: 600px;
+    width: 100%;
+    background: linear-gradient(45deg, rgb(102, 155, 188), #2a3050) !important;
+    border-color: black;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+  }
+
+  h3 {
+    color: white;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+</style>
