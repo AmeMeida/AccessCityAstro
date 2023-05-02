@@ -2,8 +2,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:3000",
-  vite: {
-    base: "./"
-  }
+  site: "https://amemeida.github.io/accesscityastro",
+  base: "/accesscityastro/",
 });
